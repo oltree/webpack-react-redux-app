@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+import repReducer from "../pages/Home/reducers";
+
 export const rootReducer = combineReducers({
-  repos: { todos: 0 },
+  repos: repReducer,
 });

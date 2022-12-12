@@ -1,31 +1,35 @@
 import axios from "axios";
+import { handleActions } from "redux-actions";
 
-const SET_REPOS = "SET_REPOS";
+import * as actions from "../actions";
 
 const defaultState = {
   items: [],
   isFetching: true,
 };
 
-export const getRep = (searchQuery = "stars:%3E1") => {
+export const setRepositories = (repositories) => ({
+  type: actions.GET_REPOSITORIES,
+  payload: repositories,
+});
+
+export const getRepositories = () => {
   return async (dispatch) => {
     const response = await axios.get(
-      `https://api.github.com/search/repositories?q=${searchQuery}&sort=stars`
+      `https://api.github.com/search/repositories?q=stars:%3E1&sort=stars`
     );
-    dispatch(setRepos(response.data));
+    dispatch(setRepositories(response.data));
   };
 };
 
-export default function repReducer(state = defaultState, action) {
-  switch (action.type) {
-    case SET_REPOS:
+export const repositoriesReducer = handleActions(
+  {
+    [actions.GET_REPOSITORIES]: (state, { payload }) => {
       return {
         ...state,
-        items: action.payload.items,
+        items: payload.items,
       };
-    default:
-      return state;
-  }
-}
-
-export const setRepos = (repos) => ({ type: SET_REPOS, payload: repos });
+    },
+  },
+  defaultState
+);

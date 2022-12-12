@@ -2,19 +2,21 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import HomeLayout from "../components/HomeLayout/index.jsx";
-import { getRep } from "../reducers/index.js";
+
+import { getRepositories } from "../reducers/index.js";
+import { repositoriesSelector } from "../selectors/index.js";
 
 const HomeContainer = () => {
   const dispatch = useDispatch();
 
-  const repos = useSelector((state) => state.repos);
+  const repositories = useSelector(repositoriesSelector);
 
-  console.log(repos);
+  console.log(repositories);
 
   useEffect(() => {
-    dispatch(getRep());
+    dispatch(getRepositories());
   }, []);
-  return <HomeLayout />;
+  return <HomeLayout repositories={repositories} />;
 };
 
 export default HomeContainer;

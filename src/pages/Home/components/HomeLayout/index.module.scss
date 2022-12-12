@@ -1,5 +1,8 @@
 .wrapper {
-	display: flex;
-	justify-content: center;
-	font-family: "Courier New", Courier, monospace;
+	.title {
+		padding: 20px;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+	}
 }

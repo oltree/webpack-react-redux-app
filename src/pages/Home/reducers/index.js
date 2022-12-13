@@ -27,6 +27,7 @@ export const repositoriesReducer = handleActions(
     [actions.GET_REPOSITORIES]: (state, { payload }) => {
       return {
         ...state,
+        isFetching: false,
         items: payload.items,
       };
     },

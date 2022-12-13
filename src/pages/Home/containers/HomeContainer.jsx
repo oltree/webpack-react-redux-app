@@ -11,8 +11,6 @@ const HomeContainer = () => {
 
   const repositories = useSelector(repositoriesSelector);
 
-  console.log(repositories);
-
   useEffect(() => {
     dispatch(getRepositories());
   }, []);

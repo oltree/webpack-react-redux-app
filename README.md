@@ -1,21 +1,15 @@
 # Project Description
 
-This pet project is a training project for the study of technology ReactJS.
-
-## Functionality
-
-- **Car catalog:** View and add cars to the catalog.
+This project is a training project for the study of technology MobX.
 
 ## Technologies
 
 - React JS
-- JavaScript
-- SCSS
+- TypeScript
+- MobX
+- Mobx-react-lite
 - Axios
-- Redux toolkit
-- Webpack
-- Redux-Thunk
-- React-hook-form
+- Mobx-utils
 
 ## Installation
 

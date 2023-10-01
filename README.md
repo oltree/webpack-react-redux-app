@@ -1,15 +1,21 @@
 # Project Description
 
-This project is a training project for the study of technology MobX.
+This project is a training project for the study of technology React.
+
+## Functionality
+
+- **Car catalog:** View and add cars to the catalog.
 
 ## Technologies
 
 - React JS
-- TypeScript
-- MobX
-- Mobx-react-lite
+- JavaScript
+- SCSS
 - Axios
-- Mobx-utils
+- Redux toolkit
+- Webpack
+- Redux-Thunk
+- React-hook-form
 
 ## Installation
 
